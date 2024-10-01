@@ -1,0 +1,26 @@
+[package]
+license = "MIT"
+edition = "2021"
+version = "0.1.0"
+readme = "README.md"
+name = "openai-realtime-proxy"
+categories = ["api-bindings", "web-programming"]
+authors = ["Miguel Piedrafita <rust@miguel.build>"]
+keywords = ["machine-learning", "openai", "realtime", "proxy"]
+repository = "https://github.com/m1guelpf/openai-realtime-proxy"
+description = "Safely deploy OpenAI's Realtime APIs in less than 5 minutes!"
+
+[dependencies]
+url = "2.5.2"
+http = "1.1.0"
+tokio = "1.40.0"
+futures = "0.3.30"
+rustls = "0.23.13"
+axum = { version = "0.7.7", features = ["ws"] }
+tokio-tungstenite = { version = "0.24.0", features = [
+    "rustls-tls-webpki-roots",
+    "url",
+] }
+
+[dev-dependencies]
+tokio = { version = "1.40.0", features = ["macros", "rt", "rt-multi-thread"] }
